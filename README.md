@@ -16,3 +16,6 @@ Most importantly, it'll help keeping both clients and employees safe from corona
 Notes and things to work on:
 * Create SMS management system on backend
 * Allow the frontend web user to manage many texts at once (all from a generated phone number rather than a personal cell)
+
+Progress:
+* Domain name registered: curby.tech
