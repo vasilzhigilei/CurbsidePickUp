@@ -9,6 +9,9 @@
         socket.on('connect', function() {
             socket.emit('my event', {data: 'I\'m connected!'});
         });
+        socket.on('toclient', function(msg) {
+            $('.grid-item').append('<p>Received: ' + msg.data + '</p>');
+        });
     </script>
 </head>
 
