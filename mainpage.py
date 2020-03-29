@@ -17,13 +17,13 @@ def sms_receive():
         msg = request.values.get('Body').strip()
         res = MessagingResponse()
         sms = {'number':request.values.get('From'), 'msg': msg}
-        socketio.emit('generateSMS', sms)
+        socketio.emit('generateSMS', sms, namespace='/test')
         res.message("Thank you! Please stay seated in your vehicle. We will hand deliver your order when it's ready.")
         return str(res)
     except:
         return render_template("index.html", restaurant={"name": "ERROR - SMS"})
 
-@socketio.on('my event')
+@socketio.on('my event', namespace='/test')
 def handle_my_custom_event(json):
     print('received json: ' + str(json))
     emit('toclient', json)
