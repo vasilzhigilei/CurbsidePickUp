@@ -8,7 +8,7 @@ socketio = SocketIO(app)
 @app.route("/")
 @app.route("/index")
 def home():
-    restaurant = {"name": "Boba's Boba Tea"}
+    restaurant = {"name": "Boba's Boba Tea", "phone" : "(434) 204-3099"}
     return render_template("index.html", restaurant=restaurant)
 
 @app.route('/sms', methods=['GET', 'POST'])

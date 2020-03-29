@@ -3,7 +3,7 @@ html,body {
 }
 
 #header {
-    height: 75px; 
+    height: 85px;
     background: radial-gradient(at bottom, rgb(255, 255, 255) 60%, rgb(233, 233, 233) 100%);
     margin-bottom: 10px;
     text-align: center;
