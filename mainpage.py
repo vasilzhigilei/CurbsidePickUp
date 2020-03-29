@@ -12,11 +12,13 @@ def home():
     return render_template("index.html", restaurant=restaurant)
 
 @app.route('/sms', methods=['GET', 'POST'])
-def sms():
+def sms_receive():
     try:
         msg = request.values.get('Body').lower().strip()
         res = MessagingResponse()
         if msg == "matcha":
+            sms = {'id':0, 'number':'434 ### ####', 'msg': 'silver subaru impreza'}
+            socketio.emit('generateSMS', sms)
             res.message("noice")
         else:
             res.message("meh")

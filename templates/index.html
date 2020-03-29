@@ -9,8 +9,10 @@
         socket.on('connect', function() {
             socket.emit('my event', {data: 'I\'m connected!'});
         });
-        socket.on('generateSMS', function(msg) {
-            $('.grid-item').append('<p>Received: ' + msg.data + '</p>');
+        socket.on('generateSMS', function(sms) {
+            socket.emit('my event', {data: 'Received SMS clientside'});
+            $('.grid-container').append('<div class="grid-item" id=' + sms.id +
+            '><div>' + sms.number + '</div><div class="messagebox">' + sms.msg + '</div></div>');
         });
     </script>
 </head>
@@ -25,17 +27,7 @@
 
     <!-- Main Area -->
     <div class="grid-container">
-        <div class="grid-item"><div>### ### ####</div><div class="messagebox">sms here</div></div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">1</div>
-
-
-      </div>
-
-
     </div>
+
 </body>
 </html>
