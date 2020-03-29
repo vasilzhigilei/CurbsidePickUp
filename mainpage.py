@@ -14,14 +14,11 @@ def home():
 @app.route('/sms', methods=['GET', 'POST'])
 def sms_receive():
     try:
-        msg = request.values.get('Body').lower().strip()
+        msg = request.values.get('Body').strip()
         res = MessagingResponse()
-        if msg == "matcha":
-            sms = {'id':0, 'number':'434 ### ####', 'msg': 'silver subaru impreza'}
-            socketio.emit('generateSMS', sms)
-            res.message("noice")
-        else:
-            res.message("meh")
+        sms = {'id':0, 'number':request.values.get('From'), 'msg': msg}
+        socketio.emit('generateSMS', sms)
+        res.message("Thank you! Please stay seated in your vehicle. We will hand deliver your order when it's ready.")
         return str(res)
     except:
         return render_template("index.html", restaurant={"name": "ERROR - SMS"})
