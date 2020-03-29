@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="static/styles.css" />
     <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8">
         var socket = io();
         socket.on('connect', function() {
@@ -12,8 +13,12 @@
         socket.on('generateSMS', function(sms) {
             socket.emit('my event', {data: 'Received SMS clientside'});
             $('.grid-container').append('<div class="grid-item" id=' + sms.id +
-            '><div>' + sms.number + '</div><div class="messagebox">' + sms.msg + '</div></div>');
+            '><div>' + sms.number + '</div><input type="image" id="image" alt="Login" src="/static/criss-cross.png">' +
+            '<div class="messagebox">' + sms.msg + '</div></div>');
         });
+        function removeSMS(elem){
+            console.log(elem.parentNode.parentNode.id);
+        }
     </script>
 </head>
 
@@ -27,7 +32,10 @@
 
     <!-- Main Area -->
     <div class="grid-container">
+        <div class="grid-item" id="1"><div style="padding: 5px;"><div style="display: inline-block;">### ### ####</div>
+            <input type="image" onClick="removeSMS(this)" style="width: 24px; float:right;" src="/static/criss-cross.png"></div>
+            <div class="messagebox">im in a car gimme foods</div>
+        </div>
     </div>
-
 </body>
 </html>
