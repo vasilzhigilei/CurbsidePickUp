@@ -11,15 +11,12 @@ def home():
     restaurant = {"name": "Boba's Boba Tea"}
     return render_template("index.html", restaurant=restaurant)
 
-id = 0
-
 @app.route('/sms', methods=['GET', 'POST'])
 def sms_receive():
     try:
         msg = request.values.get('Body').strip()
         res = MessagingResponse()
-        sms = {'id':id, 'number':request.values.get('From'), 'msg': msg}
-        id+=1
+        sms = {'number':request.values.get('From'), 'msg': msg}
         socketio.emit('generateSMS', sms)
         res.message("Thank you! Please stay seated in your vehicle. We will hand deliver your order when it's ready.")
         return str(res)

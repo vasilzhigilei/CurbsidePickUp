@@ -12,12 +12,12 @@
         });
         socket.on('generateSMS', function(sms) {
             socket.emit('my event', {data: 'Received SMS clientside'});
-            $('.grid-container').append('<div class="grid-item" id=' + sms.id +
-            '><div>' + sms.number + '</div><input type="image" id="image" alt="Login" src="/static/criss-cross.png">' +
-            '<div class="messagebox">' + sms.msg + '</div></div>');
+            $('.grid-container').append('<div class="grid-item"><div style="padding: 5px;"><div style="display: inline-block;">' +
+            sms.number + '</div><input type="image" onClick="removeSMS(this)" style="width: 24px; float:right;" src="/static/criss-cross.png">' +
+            '</div><div class="messagebox">' + sms.msg + '</div></div>');
         });
         function removeSMS(elem){
-            console.log(elem.parentNode.parentNode.id);
+            elem.parentNode.parentNode.remove();
         }
     </script>
 </head>
@@ -32,10 +32,6 @@
 
     <!-- Main Area -->
     <div class="grid-container">
-        <div class="grid-item" id="1"><div style="padding: 5px;"><div style="display: inline-block;">### ### ####</div>
-            <input type="image" onClick="removeSMS(this)" style="width: 24px; float:right;" src="/static/criss-cross.png"></div>
-            <div class="messagebox">im in a car gimme foods</div>
-        </div>
     </div>
 </body>
 </html>
