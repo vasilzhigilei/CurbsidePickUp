@@ -1,3 +1,7 @@
+html,body {
+    height: 100%;
+}
+
 #header {
     height: 75px; 
     background: radial-gradient(at bottom, rgb(255, 255, 255) 60%, rgb(233, 233, 233) 100%);
@@ -8,20 +12,33 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-auto-rows: 1fr;
     padding: 10px;
-    grid-gap: 10px
-  }
+    justify-content: space-between;
+    grid-gap: 15px;
+    height: auto;
+}
 
-  .grid-item {
+.grid-item {
     background: radial-gradient(at bottom, rgb(255, 255, 255) 60%, rgb(233, 233, 233) 100%);
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    height: 100px;
-    width: 100%;
-  }
+    padding: 5px;
+    min-height: 100px;
+    margin: 0px;
+    display: block;
+}
 
-  .background {
+.messagebox {
+    min-height: 60px; /* will someday need to be done with percentage and margins */
+    font-size:15px;
+    padding: 5px;
+    text-align: center;
+    border-style: solid;
+}
+
+.background {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: rgb(189, 119, 28);
@@ -32,4 +49,4 @@
                       -webkit-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
                       -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
     behavior: url(/pie/PIE.htc);
-  }
+}
