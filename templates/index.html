@@ -9,7 +9,7 @@
         socket.on('connect', function() {
             socket.emit('my event', {data: 'I\'m connected!'});
         });
-        socket.on('toclient', function(msg) {
+        socket.on('generateSMS', function(msg) {
             $('.grid-item').append('<p>Received: ' + msg.data + '</p>');
         });
     </script>
@@ -26,6 +26,11 @@
     <!-- Main Area -->
     <div class="grid-container">
         <div class="grid-item">1</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">1</div>
+
+
       </div>
 
 
