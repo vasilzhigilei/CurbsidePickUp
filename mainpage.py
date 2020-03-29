@@ -24,10 +24,9 @@ def sms():
     except:
         return render_template("index.html", restaurant={"name": "ERROR - SMS"})
 
-@socketio.on('my event')                          # Decorator to catch an event called "my event":
-def test_message(message):                        # test_message() is the event callback function.
-    emit('my response', {'data': 'got it!'})      # Trigger a new event called "my response"
-                                                  # that can be caught by another callback later in the program.
+@socketio.on('my event')
+def handle_my_custom_event(json):
+    print('received json: ' + str(json))
 
 if __name__ == "__main__":
     socketio.run(app)
