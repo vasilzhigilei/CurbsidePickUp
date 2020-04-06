@@ -1,8 +1,14 @@
 # CurbsidePickUp
 **A system for restaurants to deliver food to curbside parked cars during the COVID-19 pandemic**
 
+<p align="center">
+<img width="75%" src="https://raw.githubusercontent.com/vasilzhigilei/CurbsidePickUp/master/dashboardphoto.png">
+</p>
+
+Video showcasing functionality: https://www.youtube.com/watch?v=RBrBhTOWx9Y
 
 General Idea:
+
 Many restaurants now are either closed, deliveries, or only offer curbside pickup.
 The idea of this project is to help the restaurants offering curbside pickup. Usually this is done where the clients are requested to text the restaurant with their car color/make/model and name under the order.
 This can get very overwhelming for small businesses that simply use a single phone (usually the owner's personal cellphone), and end up receiving dozens of texts an hour. 
