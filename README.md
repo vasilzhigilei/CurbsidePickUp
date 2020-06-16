@@ -9,8 +9,8 @@ Video showcasing functionality: https://www.youtube.com/watch?v=RBrBhTOWx9Y
 
 General Idea:
 
-Many restaurants now are either closed, deliveries, or only offer curbside pickup.
-The idea of this project is to help the restaurants offering curbside pickup. Usually this is done where the clients are requested to text the restaurant with their car color/make/model and name under the order.
+Many restaurants are now either closed or only offer delivery or curbside pickup.
+The idea of this project is to help the restaurants offering curbside pickup. This may be done with a setup where the clients are requested to text the restaurant with their car color/make/model and name under the order.
 This can get very overwhelming for small businesses that simply use a single phone (usually the owner's personal cellphone), and end up receiving dozens of texts an hour. 
 Organization is incredibly difficult and clumsy.
 
